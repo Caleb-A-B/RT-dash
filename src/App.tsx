@@ -40,8 +40,7 @@ function App() {
                 }}
               >
                 <Routes>
-                  <Route index element={<WelcomePage />} />
-                  <Route index element={<Home />} />
+                  {/* <Route index element={<WelcomePage />} /> might not need this so saving for later jic */}
                   <Route path="/forgot-password" element={<ForgotPassword />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
@@ -54,7 +53,8 @@ function App() {
                       </Layout> 
                  </Authenticated>
                  }>
-                                 
+                <Route index element={<Home />} />
+    
                       </Route>
                 </Routes>
                 
