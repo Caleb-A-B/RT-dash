@@ -1,6 +1,6 @@
 import { UnorderedListOutlined } from '@ant-design/icons'
 import { Card, List, Space } from 'antd'
-import React from 'react'
+// import React from 'react'
 import { Text } from '../text'
 import LatestActivitiesSkeleton from '../skeleton/latest-activities'
 import { useList } from '@refinedev/core'

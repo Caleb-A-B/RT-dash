@@ -2,7 +2,7 @@ import { CalendarOutlined } from '@ant-design/icons'
 import { Badge, Card, List } from 'antd'
 import { Text } from '../text'
 import UpcomingEventsSkeleton from '../skeleton/upcoming-events';
-import { getDate } from '@/utilities/helpers';
+import { getDate } from '@/utilitis/helpers';
 import { useList } from '@refinedev/core';
 import { DASHBORAD_CALENDAR_UPCOMING_EVENTS_QUERY } from '@/graphql/queries';
 import dayjs from 'dayjs';

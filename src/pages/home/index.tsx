@@ -1,4 +1,6 @@
-import { DashboardTotalCountCard, DealsChart, LatestActivities, UpcomingEvents } from "@/components"
+import { DealsChart, UpcomingEvents } from "@/components"
+import LatestActivities from "@/components/home/latest-activities"
+import DashboardTotalCountCard from "@/components/home/total-count-card"
 import { DASHBOARD_TOTAL_COUNTS_QUERY } from "@/graphql/queries"
 import { DashboardTotalCountsQuery } from "@/graphql/types"
 import { useCustom } from "@refinedev/core"
