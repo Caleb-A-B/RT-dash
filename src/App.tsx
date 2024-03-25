@@ -6,7 +6,7 @@ import { useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 
 import { dataProvider, liveProvider, authProvider } from "./providers";
-import { Home, ForgotPassword, Login, Register } from "./pages";
+import { Home, ForgotPassword, Login, Register, CompanyList } from "./pages";
 
 import routerBindings, {
   CatchAllNavigate,
@@ -22,7 +22,6 @@ import { resources } from "./config/resources";
 function App() {
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
           <AntdApp>
             <DevtoolsProvider>
@@ -56,6 +55,7 @@ function App() {
                  </Authenticated>
                  }>
                 <Route index element={<Home />} />
+                <Route path="/companies" element={<CompanyList/>} />
     
                       </Route>
                 </Routes>
