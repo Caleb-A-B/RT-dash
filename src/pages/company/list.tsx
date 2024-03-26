@@ -8,12 +8,38 @@ import { CreateButton, DeleteButton, EditButton, FilterDropdown, List, useTable 
 import { getDefaultFilter, useGo } from '@refinedev/core';
 import { Space, Table } from 'antd';
 
-export const CompanyList = () => {
+export const CompanyList = ({ children }: React.PropsWithChildren) => {
   const go = useGo();
   const { tableProps, filters } = useTable({
     resource: 'companies',
+    onSearch: (values) => {
+      return [
+        {
+          field: 'name',
+          operator: 'contains',
+          value: values.name
+        }
+      ]
+    },
     pagination: {
       pageSize: 12,
+    },
+    sorters: {
+      initial: [
+        {
+          field: 'createdAt',
+          order: 'desc'
+        }
+      ]
+    },
+    filters: {
+      initial: [
+        {
+          field: 'name',
+          operator: 'contains',
+          value: undefined
+        }
+      ]
     },
     meta: {
       gqlQuery: COMPANIES_LIST_QUERY
@@ -21,6 +47,7 @@ export const CompanyList = () => {
   })
 
   return (
+  <div>
     <List
     breadcrumb={false}
     headerButtons={() => (
@@ -88,6 +115,8 @@ export const CompanyList = () => {
       </Table>
 
     </List>
+    {children}
+  </div>
     )
 }
 
